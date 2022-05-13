@@ -13,6 +13,7 @@ module.exports = {
       indigo900: "var(--indigo-900)",
       indigo700: "var(--indigo-700)",
       indigo600: "var(--indigo-600)",
+      indigohue: "var(--indigo-hue)",
       white: "var(--white)",
     },
     extend: {},
