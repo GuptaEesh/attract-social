@@ -1,0 +1,10 @@
+.landing-page{
+    background: url('../../images/people.jpg'); 
+   background-repeat: no-repeat;
+    background-size:cover;
+
+}
+.overlay{
+    background-color:var(--indigo-hue);
+    
+}

@@ -1,10 +1,11 @@
 import "./App.css";
-import { Authenticate } from "./screens";
+import { Authenticate, LandingPage } from "./screens";
 
 function App() {
   return (
     <div className={`${!true ? "dark" : ""} App`}>
-      <Authenticate />
+      {/* <Authenticate /> */}
+      <LandingPage />
     </div>
   );
 }
