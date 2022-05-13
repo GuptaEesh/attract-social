@@ -1,14 +1,14 @@
 import "./App.css";
-import { SideBar, TopBar } from "./components";
-import { Authenticate, LandingPage } from "./screens";
+import { TopBar } from "./components";
+import { Authenticate, LandingPage, UserProfile } from "./screens";
 
 function App() {
   return (
     <div className={`${!true ? "dark" : ""} App`}>
       {/* <Authenticate /> */}
       {/* <LandingPage /> */}
-      <TopBar />
-      {/* <SideBar /> */}
+      {/* <TopBar /> */}
+      <UserProfile />
     </div>
   );
 }
