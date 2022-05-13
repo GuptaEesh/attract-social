@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  --white:#fff;
+  --color-bg:#fff;
+  --color-text-900:#000;
+  --color-text-700:rgb(58, 58, 58);
+  --color-text-500:rgb(85, 85, 85);
+  --color-text-300:rgb(138, 138, 138);
+  --color-text-100:rgb(207, 207, 207);
+  --color-btn:rgb(40, 40, 107);
+  --green-400:#4ade80;
+  --indigo-900:#312e81;
+  --indigo-700:#403d92;
+  --indigo-600:#5e5caf;
+}
+
+.dark {
+  --color-bg:#000;
+
+}
