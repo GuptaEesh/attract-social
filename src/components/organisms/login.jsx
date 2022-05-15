@@ -40,7 +40,7 @@ const Login = ({toggleLogin}) => {
           />
           <span className="flex flex-col">
             New Here?
-          <Button btnText="Register Here &gt;" btnType="rounded py-0.5 border-2 border-modeColorText700 text-modeColorText900 px-1 pointer  font-bold" btnFunc={toggleLogin} />
+          <Button btnText="Register Here &gt;" btnType="rounded py-0.5 border-2 border-modeColorText700 text-modeColorText900 px-1 font-bold" btnFunc={toggleLogin} />
           </span>
           <Input
             inputType="submit"
