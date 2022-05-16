@@ -3,7 +3,7 @@ import { Button } from '../../atoms'
 const UserProfileInfo = ({userImg,name,userBio}) => {
   return (
   <div className="bg-white flex flex-col items-center shadow rounded w-[60%]">
-      <img className="w-20 h-20 overflow-hidden object-cover rounded" src={userImg ?? "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg"} alt />
+      <img className="w-20 h-20 overflow-hidden object-cover rounded" src={userImg ?? "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg"} alt={name ?? "Test"} />
         <div className="px-5 pb-10">
             <div className="pt-3 flex flex-col items-center justify-between">
                 <div className=" w-full flex flex-col items-center">
@@ -29,7 +29,7 @@ const UserProfileInfo = ({userImg,name,userBio}) => {
                 </div>
                 <section className='flex gap-1 items-center '>
                 {["Remote","Enthusiast"].map( tag =>
-                <div className="rounded-full font-bold odd:bg-indigo900 even:bg-modeColorText300 text-white text-sm px-3 py-2 flex justify-center items-center">{tag}</div>)}
+                <div key={tag} className="rounded-full font-bold odd:bg-indigo900 even:bg-modeColorText300 text-white text-sm px-3 py-2 flex justify-center items-center">{tag}</div>)}
                 </section>
             </div>
         </div>

@@ -2,11 +2,11 @@ import React from 'react'
 import {AiFillHome,AiFillBell,AiOutlineLogout} from 'react-icons/ai'
 import {BsGlobe,BsFillBookmarksFill} from 'react-icons/bs'
 import {FaPaperPlane} from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'  
+import { Link, NavLink } from 'react-router-dom'  
 import { logout } from '../../../features'
 import { useAuth } from '../../../hooks'
 const SideBar = ({userImg,name,email,showSideBar}) => {
-  const {dispatchAuth}=useAuth();
+  const {state:{user:{username}},dispatchAuth}=useAuth();
   const logoutHandler=()=>dispatchAuth(logout());
   return (
     // this throws full width page out on click of hamburger
@@ -42,13 +42,13 @@ const SideBar = ({userImg,name,email,showSideBar}) => {
 
        {/* Click below to open user profile */}
 
-       <div className="cursor-pointer rounded-md bg-indigohue mx-4 p-4 flex justify-start items-center space-x-2 ">
+       <Link to={`/user/${username}`} className="cursor-pointer rounded-md bg-indigohue mx-4 p-4 flex justify-start items-center space-x-2 ">
             <img src={userImg ?? "https://i.ibb.co/54vKnF3/Ellipse-3.png"} alt="avatar" />
             <div className="flex text-modeColorText900 flex-col jusitfy-start items-start space-y-1">
                  <p className="text-base font-bold   ">{name ?? "Eesh"}</p>
                  <p className="text-xs leading-3">{email??"eesh@gmail.com"}</p>
             </div>
-      </div>
+      </Link>
     </nav>
     </div>
   )

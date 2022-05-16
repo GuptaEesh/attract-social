@@ -1,7 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import {  UserProfileInfo } from '../../components'
 
 const UserProfile = ({userImg,name,userBio}) => {
+  const {username}=useParams();
+  console.log(username);
   return (
     <div className='flex flex-col items-center w-[50vw]'>
         <UserProfileInfo userImg={userImg} name={name} userBio={userBio} />
