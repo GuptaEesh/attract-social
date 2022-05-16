@@ -12,7 +12,13 @@ export const users = [
     lastName: "Gupta",
     username: "eesh730",
     password: "6GPaa!23",
+    bio: "Social redux : Can someone provide me store too!",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    following: [],
+    followers: [],
+    bookmarks: [],
   },
 ];
