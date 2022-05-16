@@ -1,7 +1,6 @@
 import React from 'react'
-import {AiFillHome,AiFillBell,AiOutlineLogout} from 'react-icons/ai'
-import {BsGlobe,BsFillBookmarksFill} from 'react-icons/bs'
-import {FaPaperPlane} from 'react-icons/fa'
+import { AiFillHome,FaPaperPlane ,AiFillBell, AiOutlineLogout,BsGlobe,
+  BsFillBookmarksFill,  } from '../../../icons'
 import { Link, NavLink } from 'react-router-dom'  
 import { logout } from '../../../features'
 import { useAuth } from '../../../hooks'
@@ -13,7 +12,7 @@ const SideBar = ({userImg,name,email,showSideBar}) => {
     <div className={`${showSideBar ? "-translate-x-full" : "translate-x-0"} absolute side-bar bg-transparent transform ease-in-out transition duration-500 flex justify-start items-start w-full flex-col h-screen`}>
     <nav className='flex flex-col shadow-[0_0_8px_0_var(--color-text-700)] gap-8 h-full bg-white w-[20vw]'>
 
-      {[{icon:<AiFillHome/>,element:"Home"},{icon:<BsGlobe/>,element:"Discover"},{icon:<AiFillBell/>,element:"Notification"},{icon:<BsFillBookmarksFill/>,element:"BookMarks"}].map(item=>
+      {[{icon:<AiFillHome />,element:"Home"},{icon:<BsGlobe />,element:"Discover"},{icon:<AiFillBell/>,element:"Notification"},{icon:<BsFillBookmarksFill/>,element:"BookMarks"}].map(item=>
           <NavLink to="/" key={item.element} className="cursor-pointer flex gap-2 p-4 text-modeColorText500 items-center hover:text-modeColorText900 hover:underline  text-xl">
             <span>{item.icon}</span>
             <span>{item.element}</span>
