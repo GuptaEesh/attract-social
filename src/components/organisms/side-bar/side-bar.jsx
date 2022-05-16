@@ -3,11 +3,14 @@ import {AiFillHome,AiFillBell,AiOutlineLogout} from 'react-icons/ai'
 import {BsGlobe,BsFillBookmarksFill} from 'react-icons/bs'
 import {FaPaperPlane} from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'  
+import { logout } from '../../../features'
+import { useAuth } from '../../../hooks'
 const SideBar = ({userImg,name,email,showSideBar}) => {
+  const {dispatchAuth}=useAuth();
+  const logoutHandler=()=>dispatchAuth(logout());
   return (
     // this throws full width page out on click of hamburger
-    <div className={`${showSideBar ? "-translate-x-full" : "translate-x-0"} side-bar
-    bg-indigo900 transform ease-in-out transition duration-500 flex justify-start items-start w-full flex-col h-screen`}>
+    <div className={`${showSideBar ? "-translate-x-full" : "translate-x-0"} absolute side-bar bg-transparent transform ease-in-out transition duration-500 flex justify-start items-start w-full flex-col h-screen`}>
     <nav className='flex flex-col shadow-[0_0_8px_0_var(--color-text-700)] gap-8 h-full bg-white w-[20vw]'>
 
       {[{icon:<AiFillHome/>,element:"Home"},{icon:<BsGlobe/>,element:"Discover"},{icon:<AiFillBell/>,element:"Notification"},{icon:<BsFillBookmarksFill/>,element:"BookMarks"}].map(item=>
@@ -32,7 +35,7 @@ const SideBar = ({userImg,name,email,showSideBar}) => {
 
        {/* Add onClick on the follwing div for logging out*/}
 
-       <div className='flex items-center gap-4 p-4 cursor-pointer text-modeColorText500 hover:text-modeColorText900 hover:underline text-xl'>
+       <div onClick={logoutHandler} className='flex items-center gap-4 p-4 cursor-pointer text-modeColorText500 hover:text-modeColorText900 hover:underline text-xl'>
           <AiOutlineLogout/>
           <span>Logout</span>
        </div>
