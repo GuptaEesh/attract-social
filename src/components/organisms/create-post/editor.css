@@ -1,0 +1,4 @@
+.post-button:disabled{
+      filter: brightness(0.5);
+      cursor:not-allowed;
+  }

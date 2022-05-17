@@ -11,6 +11,7 @@ export const users = [
     firstName: "Eesh",
     lastName: "Gupta",
     username: "eesh730",
+    email: "eesh@eesh.com",
     password: "6GPaa!23",
     bio: "Social redux : Can someone provide me store too!",
     createdAt: formatDate(),
