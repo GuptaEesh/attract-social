@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Input } from "../../atoms";
-
+import { BsEyeFill, BsEyeSlash } from "../../../icons";
 export function InputPass({
   title: name,
   inputClass,
