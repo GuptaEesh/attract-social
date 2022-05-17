@@ -10,6 +10,10 @@ export {
   bookMarkPostHandler,
   removeBookMarkPostHandler,
   getBookMarksHandler,
+  getAllUsersHandler,
+  followUserHandler,
+  unFollowUserHandler,
+  updateAuthUser,
 } from "./server-requests";
 
 export { apiRoutes, appRoutes } from "./constants";

@@ -12,6 +12,8 @@ import {
 const initialPostData = {
   allPosts: [],
   bookmarkedPosts: [],
+  sortByDate: null,
+  trending: false,
 };
 
 export const getPosts = createAsyncThunk("posts/all", async () => {
@@ -104,7 +106,18 @@ export const getBookMarkedPosts = createAsyncThunk(
 const postsSlice = createSlice({
   name: "posts",
   initialState: initialPostData,
-  reducers: {},
+  reducers: {
+    sortByDateHandler: (state, action) => {
+      state.sortByDate = action.payload;
+    },
+    trendHandler: (state) => {
+      state.trending = !state.trending;
+    },
+    clearFiltersHandler: (state) => {
+      state.sortByDate = null;
+      state.trending = false;
+    },
+  },
   extraReducers: {
     [getPosts.fulfilled]: (state, { payload: posts }) => {
       state.allPosts = posts.posts;
@@ -130,5 +143,6 @@ const postsSlice = createSlice({
   },
 });
 
-export const {} = postsSlice.actions;
+export const { sortByDateHandler, trendHandler, clearFiltersHandler } =
+  postsSlice.actions;
 export const postsReducer = postsSlice.reducer;

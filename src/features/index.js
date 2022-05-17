@@ -7,8 +7,18 @@ export {
   addToBookMarks,
   removeFromBookMarks,
   getBookMarkedPosts,
+  sortByDateHandler,
+  trendHandler,
+  clearFiltersHandler,
 } from "./postsSlice";
 
-export { userReducer, getUser, getUserPosts } from "./userSlice";
+export {
+  userReducer,
+  getUser,
+  getUserPosts,
+  getAllUsers,
+  followUser,
+  unFollowUser,
+} from "./userSlice";
 
 export { authReducer, login, logout, signup, handlePass } from "./authSlice";

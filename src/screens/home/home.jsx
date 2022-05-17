@@ -1,22 +1,38 @@
-import React, { useEffect } from 'react'
-import { SinglePostCard,CreatePost } from '../../components';
-import { getPosts } from '../../features';
-import { usePosts } from '../../hooks'
+import React, { useEffect } from "react";
+import { SinglePostCard, CreatePost } from "../../components";
+import { getPosts } from "../../features";
+import { useAuth, usePosts } from "../../hooks";
+import {
+  filterPostsOnDate,
+  getFiltered,
+  trendingPosts,
+} from "./filter-functions";
 
 const Home = () => {
-  const {state:{allPosts},dispatchPosts}=usePosts();
-  useEffect(()=>{
+  const {
+    state: { allPosts, sortByDate, trending },
+    dispatchPosts,
+  } = usePosts();
+  useEffect(() => {
     dispatchPosts(getPosts());
-  },[])
+  }, []);
+  const filters = { sortByDate, trending };
+  let filteredPosts = getFiltered(filterPostsOnDate, trendingPosts)(
+    filters,
+    allPosts
+  );
   return (
-    allPosts && 
-    <div className='flex flex-col mb-8 mt-2'>
-    <CreatePost/>  
-    <div className='flex-flex-col'>  
-    {allPosts.map(post=><SinglePostCard key={post._id} post={post}/>)}
-    </div>
-    </div>
-  )
-}
+    filteredPosts && (
+      <div className="flex flex-col mb-8 mt-2 md:mt-2 lg:mt-24 w-[100vw] order-2 md:order-2 md:w-[100vw] lg:order-1 lg:w-[80vw]">
+        <CreatePost />
+        <div className="flex-flex-col">
+          {filteredPosts.map((post) => (
+            <SinglePostCard key={post._id} post={post} />
+          ))}
+        </div>
+      </div>
+    )
+  );
+};
 
-export {Home}
+export { Home };

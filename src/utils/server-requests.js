@@ -16,6 +16,31 @@ export const getSingleUserHandler = async (username) => {
 export const getSingleUserPostsHandler = async (username) => {
   return await axios.get(`/api/posts/user/${username}`);
 };
+export const getAllUsersHandler = async () => {
+  return await axios.get(apiRoutes.allUsers);
+};
+export const followUserHandler = async (followUserId, token) => {
+  return await axios.post(
+    `/api/users/follow/${followUserId}`,
+    {},
+    getConfig(token)
+  );
+};
+export const unFollowUserHandler = async (followUserId, token) => {
+  return await axios.post(
+    `/api/users/unfollow/${followUserId}`,
+    {},
+    getConfig(token)
+  );
+};
+export const updateAuthUser = async (user, token) => {
+  return await axios.post(
+    apiRoutes.userUpdate,
+    { userData: user },
+    getConfig(token)
+  );
+};
+
 export const getAllPostsHandler = async (username) => {
   return await axios.get(apiRoutes.allPosts);
 };

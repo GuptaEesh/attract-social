@@ -14,3 +14,4 @@ export {
   BsFillBookmarkCheckFill,
 } from "react-icons/bs";
 export { FaPaperPlane } from "react-icons/fa";
+export { BiTrendingUp } from "react-icons/bi";
