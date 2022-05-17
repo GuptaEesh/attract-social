@@ -4,7 +4,7 @@ import {  SinglePostCard, UserProfileInfo } from '../../components'
 import { getUser, getUserPosts } from '../../features';
 import { useDisplayUser } from '../../hooks';
 
-const UserProfile = ({userImg,userBio}) => {
+const UserProfile = () => {
   const {username}=useParams();
   const {state:{displayUser,displayUserPosts:posts},dispatchUser}=useDisplayUser();
   useEffect(()=>{
@@ -17,7 +17,7 @@ const UserProfile = ({userImg,userBio}) => {
         <section className='flex flex-col'>
          {/* to be replaced by Link or Button Tags in future*/}
          <div className='flex-flex-col w-[50vw]'>  
-           {posts.map(post=><SinglePostCard key={displayUser._id} post={post} user={displayUser}/>)}
+           {posts.map(post=><SinglePostCard key={displayUser._id} post={post}/>)}
         </div>
 
         </section>

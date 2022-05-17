@@ -1,9 +1,9 @@
 import React from 'react'
 import { AiOutlineLike,AiFillLike, BsBookmark } from '../../../icons';
 import Moment from 'react-moment'
-const SinglePostCard = ({post,user}) => {
-  console.log(post,user);
-  const {firstName,username,avatar}=user;
+const SinglePostCard = ({post}) => {
+  console.log(post);
+  const {firstName,username,avatar,content,createdAt}=post;
     return (
         <div className=" rounded mt-1 flex flex-col w-full shadow-lg py-4 px-5 ">
         <div className="flex items-start justify-between">
@@ -20,14 +20,14 @@ const SinglePostCard = ({post,user}) => {
               <p className="text-xl font-bold leading-4 text-gray-800">
                 {firstName} <small className='font-normal text-xs'>@{username}</small>
               </p>
-              <small><Moment fromNow>{post.createdAt}</Moment></small>
+              <small><Moment fromNow>{createdAt}</Moment></small>
             </div>
           </div>
         </div>
-       <p>{post.content}</p>
+       <p>{content}</p>
 
         <div className="flex items-center justify-between mt-2">
-          {post.likes.likedBy.find(userCheck=>userCheck.username===user.username)?<AiFillLike/>:<AiOutlineLike/>}
+          {post.likes.likedBy.find(userCheck=>userCheck.username===username)?<AiFillLike/>:<AiOutlineLike/>}
           <BsBookmark/>
         </div>
       </div>

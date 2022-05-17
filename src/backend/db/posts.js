@@ -9,7 +9,11 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
+    firstName: "Eesh",
+    lastName: "Gupta",
     content: "This is 1st post.",
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -22,6 +26,10 @@ export const posts = [
   {
     _id: uuid(),
     content: "This is 2nd post.",
+    firstName: "Eesh",
+    lastName: "Gupta",
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
     likes: {
       likeCount: 0,
       likedBy: [
@@ -30,7 +38,7 @@ export const posts = [
           firstName: "Eesh",
           lastName: "Gupta",
           username: "eesh730",
-          avatarURL:
+          avatar:
             "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
         },
       ],
