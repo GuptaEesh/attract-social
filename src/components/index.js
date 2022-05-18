@@ -7,4 +7,4 @@ export {
   CreatePost,
 } from "./organisms";
 export { Button, Input, Loader, SmallLoader } from "./atoms";
-export { InputPass, InputSimple } from "./molecules";
+export { InputPass, InputSimple, CommentBox } from "./molecules";

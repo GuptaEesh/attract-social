@@ -80,3 +80,17 @@ export const editPostHandler = async (id, contentObj, token) => {
     getConfig(token)
   );
 };
+export const postCommentHandler = async (id, commentData, token) => {
+  return await axios.post(
+    `/api/comments/add/${id}`,
+    { commentData },
+    getConfig(token)
+  );
+};
+export const deleteCommentHandler = async (postId, commentId, token) => {
+  return await axios.post(
+    `/api/comments/delete/${postId}/${commentId}`,
+    {},
+    getConfig(token)
+  );
+};

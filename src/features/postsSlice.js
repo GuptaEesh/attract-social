@@ -9,6 +9,8 @@ import {
   getBookMarksHandler,
   deletePostHandler,
   editPostHandler,
+  postCommentHandler,
+  deleteCommentHandler,
 } from "../utils";
 
 const initialPostData = {
@@ -130,6 +132,30 @@ export const deletePostFromFeed = createAsyncThunk(
     }
   }
 );
+export const addCommentOnPost = createAsyncThunk(
+  "posts/comment",
+  async ({ postId, commentData, token }) => {
+    try {
+      const response = await postCommentHandler(postId, commentData, token);
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
+export const deleteSpecificComment = createAsyncThunk(
+  "posts/deleteComment",
+  async ({ postId, commentId, token, setLoaders }) => {
+    try {
+      setLoaders((prev) => ({ ...prev, deleteLoader: true }));
+      const response = await deleteCommentHandler(postId, commentId, token);
+      setLoaders((prev) => ({ ...prev, deleteLoader: false }));
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
 
 const postsSlice = createSlice({
   name: "posts",
@@ -147,17 +173,17 @@ const postsSlice = createSlice({
     },
   },
   extraReducers: {
-    [getPosts.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [getPosts.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
-    [putPost.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [putPost.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
-    [likeThePost.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [likeThePost.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
-    [disLikeThePost.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [disLikeThePost.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
     [addToBookMarks.fulfilled]: (state, { payload: bookmarks }) => {
       state.bookmarkedPosts = bookmarks.bookmarks;
@@ -168,11 +194,17 @@ const postsSlice = createSlice({
     [getBookMarkedPosts.fulfilled]: (state, { payload: bookmarks }) => {
       state.bookmarkedPosts = bookmarks.bookmarks;
     },
-    [deletePostFromFeed.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [deletePostFromFeed.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
-    [editThePost.fulfilled]: (state, { payload: posts }) => {
-      state.allPosts = posts.posts;
+    [editThePost.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
+    },
+    [addCommentOnPost.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
+    },
+    [deleteSpecificComment.fulfilled]: (state, { payload: { posts } }) => {
+      state.allPosts = posts;
     },
   },
 });

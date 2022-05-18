@@ -19,6 +19,22 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    comments: [
+      {
+        _id: uuid(),
+        firstName: "Moba",
+        lastName: "Farhan",
+        username: "moba200",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+        comment: "Vaah!",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+        createdAt: new Date("Mar 12 2022 10:31:25"),
+      },
+    ],
     username: "eesh730",
     createdAt: new Date("Mar 11 2022 10:20:18"),
     updatedAt: formatDate(),
@@ -44,6 +60,7 @@ export const posts = [
       ],
       dislikedBy: [],
     },
+    comments: [],
     username: "eesh730",
     createdAt: new Date("May 12 2022 11:30:21"),
     updatedAt: formatDate(),
@@ -69,6 +86,7 @@ export const posts = [
       ],
       dislikedBy: [],
     },
+    comments: [],
     username: "moba200",
     createdAt: new Date("Jan 10 2022 21:45:50"),
     updatedAt: formatDate(),
