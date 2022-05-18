@@ -125,7 +125,7 @@ export const bookmarkPostHandler = function (schema, request) {
       );
     }
     const isBookmarked = user.bookmarks.some(
-      (currPostId) => currPostId === postId
+      (currPostId) => currPostId._id === postId
     );
     if (isBookmarked) {
       return new Response(
