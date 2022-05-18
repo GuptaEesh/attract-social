@@ -23,7 +23,7 @@ const Home = () => {
   );
   return (
     filteredPosts && (
-      <div className="flex flex-col mb-8 mt-2 md:mt-2 lg:mt-24 w-[100vw] order-2 md:order-2 md:w-[100vw] lg:order-1 lg:w-[80vw]">
+      <div className="flex flex-col mb-8 mt-2 md:mt-2 lg:mt-24 w-[100vw] order-2 md:order-2 md:w-[100vw] lg:order-1 lg:w-[50vw]">
         <CreatePost />
         <div className="flex-flex-col">
           {filteredPosts.map((post) => (

@@ -18,9 +18,25 @@ export const users = [
     updatedAt: formatDate(),
     avatar:
       "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
-    following: [],
+    following: [
+      {
+        firstName: "Moba",
+        lastName: "Farhan",
+        username: "moba200",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+      {
+        firstName: "Ronak",
+        lastName: "Mutha",
+        username: "ronak420",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+    ],
     followers: [],
     bookmarks: [],
+    portfolio: "https://github.com/GuptaEesh",
   },
   {
     _id: uuid(),
@@ -35,8 +51,17 @@ export const users = [
     avatar:
       "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
     following: [],
-    followers: [],
+    followers: [
+      {
+        firstName: "Eesh",
+        lastName: "Gupta",
+        username: "eesh730",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+    ],
     bookmarks: [],
+    portfolio: "https://www.google.com",
   },
   {
     _id: uuid(),
@@ -51,7 +76,33 @@ export const users = [
     avatar:
       "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
     following: [],
+    followers: [
+      {
+        firstName: "Eesh",
+        lastName: "Gupta",
+        username: "eesh730",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+    ],
+    bookmarks: [],
+    portfolio: "https://www.google.com",
+  },
+  {
+    _id: uuid(),
+    firstName: "Shivam",
+    lastName: "Pandey",
+    username: "pandey120",
+    email: "shivam@shivam.com",
+    password: "89!Qqqyui",
+    bio: "I observe all that transpires here, but i won't interfere",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    following: [],
     followers: [],
     bookmarks: [],
+    portfolio: "https://www.google.com",
   },
 ];

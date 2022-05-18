@@ -10,6 +10,8 @@ export {
   sortByDateHandler,
   trendHandler,
   clearFiltersHandler,
+  deletePostFromFeed,
+  editThePost,
 } from "./postsSlice";
 
 export {
@@ -19,6 +21,7 @@ export {
   getAllUsers,
   followUser,
   unFollowUser,
+  resetUserProfile,
 } from "./userSlice";
 
 export { authReducer, login, logout, signup, handlePass } from "./authSlice";

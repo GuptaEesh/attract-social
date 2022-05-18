@@ -24,7 +24,7 @@ function App() {
   return (
     <div className={`${!true ? "dark" : ""} App relative`}>
       {token && <TopBar />}
-      <div className="flex flex-col md:flex-col lg:flex-row h-[100vh] ">
+      <div className="flex lg:justify-center flex-col md:flex-col lg:flex-row h-[100vh] ">
         <Routes>
           <Route path={appRoutes.welcome} element={<LandingPage />} />
           <Route element={<RedirectAuth />}>

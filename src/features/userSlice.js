@@ -78,7 +78,12 @@ export const unFollowUser = createAsyncThunk(
 const userSlice = createSlice({
   name: "user",
   initialState: initialUserData,
-  reducers: {},
+  reducers: {
+    resetUserProfile: (state) => {
+      state.displayUser = null;
+      state.displayUserPosts = [];
+    },
+  },
   extraReducers: {
     [getUser.fulfilled]: (state, { payload: displayUser }) => {
       state.displayUser = displayUser.user;
@@ -111,5 +116,5 @@ const userSlice = createSlice({
     },
   },
 });
-// export const {} = userSlice.actions;
+export const { resetUserProfile } = userSlice.actions;
 export const userReducer = userSlice.reducer;

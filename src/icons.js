@@ -4,6 +4,8 @@ export {
   AiFillLike,
   AiFillBell,
   AiOutlineLogout,
+  AiFillDelete,
+  AiFillEdit,
 } from "react-icons/ai";
 export {
   BsGlobe,
@@ -14,4 +16,5 @@ export {
   BsFillBookmarkCheckFill,
 } from "react-icons/bs";
 export { FaPaperPlane } from "react-icons/fa";
-export { BiTrendingUp } from "react-icons/bi";
+export { BiTrendingUp, BiLink } from "react-icons/bi";
+export { MdDownloadDone } from "react-icons/md";
