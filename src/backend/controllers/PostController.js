@@ -90,7 +90,7 @@ export const createPostHandler = function (schema, request) {
       username: user.username,
       firstName: userData.firstName,
       lastName: userData.lastName,
-      avatarURL: userData.avatarURL,
+      avatar: userData.avatar,
       comments: [],
       createdAt: formatDate(),
       updatedAt: formatDate(),
