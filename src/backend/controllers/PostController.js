@@ -192,7 +192,10 @@ export const likePostHandler = function (schema, request) {
 
     post.likes.likeCount += 1;
 
-    post.likes.likedBy.push(user);
+    post.likes.likedBy.push({
+      username: user.username,
+      firstName: user.firstName,
+    });
 
     this.db.posts.update({ _id: postId }, { ...post, updatedAt: formatDate() });
 
@@ -251,7 +254,10 @@ export const dislikePostHandler = function (schema, request) {
     const updatedLikedBy = post.likes.likedBy.filter(
       (currUser) => currUser.username !== user.username
     );
-    post.likes.dislikedBy.push(user);
+    post.likes.dislikedBy.push({
+      username: user.username,
+      firstName: user.firstName,
+    });
     post = { ...post, likes: { ...post.likes, likedBy: updatedLikedBy } };
     this.db.posts.update({ _id: postId }, { ...post, updatedAt: formatDate() });
     return new Response(201, {}, { posts: this.db.posts });
