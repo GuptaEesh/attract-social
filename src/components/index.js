@@ -6,5 +6,5 @@ export {
   SinglePostCard,
   CreatePost,
 } from "./organisms";
-export { Button, Input, Loader, SmallLoader } from "./atoms";
+export { Button, Input, SmallLoader } from "./atoms";
 export { InputPass, InputSimple, CommentBox } from "./molecules";
