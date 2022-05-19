@@ -48,7 +48,7 @@ export const signupHandler = function (schema, request) {
       avatar: "",
     };
     const createdUser = schema.users.create(newUser);
-    this.db.users.insert(newUser);
+    this.db.users.push(newUser);
     const encodedToken = sign(
       { _id, username },
       process.env.REACT_APP_JWT_SECRET
