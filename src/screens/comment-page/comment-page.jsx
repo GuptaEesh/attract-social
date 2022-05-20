@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Button, CommentBox, Input, SinglePostCard } from "../../components";
 import { addCommentOnPost } from "../../features";
 import { useAuth, usePosts } from "../../hooks";
-
+import "./comment-page.css";
 const CommentOnPost = () => {
   const { postId } = useParams();
   const {
@@ -40,7 +40,8 @@ const CommentOnPost = () => {
         />
         <Button
           btnText="Comment"
-          btnType="rounded cursor-pointer p-1 mt-2 bg-indigo700 text-white hover:bg-indigo600 font-bold shadow-md"
+          disabled={!comment.length}
+          btnType="rounded comment-btn cursor-pointer p-1 mt-2 bg-indigo700 text-white hover:bg-indigo600 font-bold shadow-md"
           btnFunc={postComment}
         />
       </section>
