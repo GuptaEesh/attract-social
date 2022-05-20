@@ -19,4 +19,4 @@ Features Present:-
 - Bookmark Post
 - Loading
 
-Experience the new society - Attract-Social Link
+Experience the new society - https://attract-social.netlify.app/
