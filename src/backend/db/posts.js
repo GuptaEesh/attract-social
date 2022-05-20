@@ -91,4 +91,90 @@ export const posts = [
     createdAt: new Date("Jan 10 2022 21:45:50"),
     updatedAt: formatDate(),
   },
+  {
+    _id: uuid(),
+    content: "Get me the wizard",
+    firstName: "Ronak",
+    lastName: "Mutha",
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    likes: {
+      likeCount: 1,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Eesh",
+          lastName: "Gupta",
+          username: "eesh730",
+          avatar:
+            "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+        },
+      ],
+      dislikedBy: [],
+    },
+    comments: [],
+    username: "ronak420",
+    createdAt: new Date("Feb 12 2022 05:30:22"),
+    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    content: "CORS error resolver",
+    firstName: "Shivam",
+    lastName: "Pandey",
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    likes: {
+      likeCount: 2,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Ronak",
+          lastName: "Mutha",
+          username: "ronak420",
+          avatar:
+            "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+        },
+        {
+          _id: uuid(),
+          firstName: "Eesh",
+          lastName: "Gupta",
+          username: "eesh730",
+          avatar:
+            "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+        },
+      ],
+      dislikedBy: [],
+    },
+    comments: [],
+    username: "pandey120",
+    createdAt: new Date("Apr 24 2022 15:30:22"),
+    updatedAt: formatDate(),
+  },
+  {
+    _id: uuid(),
+    content: "Meetup?",
+    firstName: "Zuber",
+    lastName: "Dunge",
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    likes: {
+      likeCount: 1,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Eesh",
+          lastName: "Gupta",
+          username: "eesh730",
+          avatar:
+            "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+        },
+      ],
+      dislikedBy: [],
+    },
+    comments: [],
+    username: "zuber840",
+    createdAt: new Date("May 01 2022 22:30:00"),
+    updatedAt: formatDate(),
+  },
 ];

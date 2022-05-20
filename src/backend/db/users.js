@@ -105,4 +105,21 @@ export const users = [
     bookmarks: [],
     portfolio: "https://www.google.com",
   },
+  {
+    _id: uuid(),
+    firstName: "Zuber",
+    lastName: "Dunge",
+    username: "zuber840",
+    email: "zuber@zuber.com",
+    password: "233!Qasyui",
+    bio: "Akola for life",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    following: [],
+    followers: [],
+    bookmarks: [],
+    portfolio: "https://www.google.com",
+  },
 ];
