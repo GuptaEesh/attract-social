@@ -18,10 +18,10 @@ const SuggestedPeople = () => {
   }, []);
   const currUser = allUsers?.find((user) => user.username === username);
   return (
-    allUsers.length && (
+    allUsers?.length && (
       <div className="flex flex-col gap-2">
         {allUsers
-          .filter(
+          ?.filter(
             (userCheck) =>
               userCheck.username !== currUser.username &&
               !currUser.following.find(
@@ -29,7 +29,7 @@ const SuggestedPeople = () => {
               )
           )
           .sort(() => Math.random() - Math.random())
-          .slice(0, 2)
+          .slice(0, 3)
           .map((user) => (
             <Link
               to={`/user/${user.username}`}

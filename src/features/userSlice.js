@@ -52,7 +52,7 @@ export const followUser = createAsyncThunk(
     try {
       setFollowLoader(true);
       const response = await followUserHandler(followUserId, token);
-      // await updateAuthUser(response.data.user, token);
+      await updateAuthUser(response.data.user, token);
       setFollowLoader(false);
       return response.data;
     } catch (e) {

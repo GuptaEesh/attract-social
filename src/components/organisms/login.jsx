@@ -14,7 +14,7 @@ const Login = ({ toggleLogin }) => {
 
   const guestLogin = (e) => {
     e.preventDefault();
-    setLoginData({ username: "eesh730", password: "6GPaa!23" });
+    setLoginData({ username: "ronak420", password: "45!Qqqaaq" });
   };
 
   const inputHandler = (e) => {
