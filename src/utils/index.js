@@ -14,6 +14,8 @@ export {
   followUserHandler,
   unFollowUserHandler,
   updateAuthUser,
+  deletePostHandler,
+  editPostHandler,
 } from "./server-requests";
 
 export { apiRoutes, appRoutes } from "./constants";

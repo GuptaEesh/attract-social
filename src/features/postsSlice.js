@@ -7,6 +7,8 @@ import {
   bookMarkPostHandler,
   removeBookMarkPostHandler,
   getBookMarksHandler,
+  deletePostHandler,
+  editPostHandler,
 } from "../utils";
 
 const initialPostData = {
@@ -30,6 +32,19 @@ export const putPost = createAsyncThunk(
   async ({ content, token }) => {
     try {
       const response = await putPostHandler(content, token);
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
+export const editThePost = createAsyncThunk(
+  "posts/singlePost",
+  async ({ _id, contentObj, token, setLoaders }) => {
+    try {
+      setLoaders((loaders) => ({ ...loaders, editLoader: true }));
+      const response = await editPostHandler(_id, contentObj, token);
+      setLoaders((loaders) => ({ ...loaders, editLoader: false }));
       return response.data;
     } catch (e) {
       console.log(e);
@@ -102,6 +117,19 @@ export const getBookMarkedPosts = createAsyncThunk(
     }
   }
 );
+export const deletePostFromFeed = createAsyncThunk(
+  "posts/deletePost",
+  async ({ postId, token, setLoaders }) => {
+    try {
+      setLoaders((loaders) => ({ ...loaders, deleteLoader: true }));
+      const response = await deletePostHandler(postId, token);
+      setLoaders((loaders) => ({ ...loaders, deleteLoader: false }));
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+);
 
 const postsSlice = createSlice({
   name: "posts",
@@ -139,6 +167,12 @@ const postsSlice = createSlice({
     },
     [getBookMarkedPosts.fulfilled]: (state, { payload: bookmarks }) => {
       state.bookmarkedPosts = bookmarks.bookmarks;
+    },
+    [deletePostFromFeed.fulfilled]: (state, { payload: posts }) => {
+      state.allPosts = posts.posts;
+    },
+    [editThePost.fulfilled]: (state, { payload: posts }) => {
+      state.allPosts = posts.posts;
     },
   },
 });

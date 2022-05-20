@@ -2,8 +2,19 @@ import React, { useState } from "react";
 import { followUser, unFollowUser } from "../../../features";
 import { useAuth, useDisplayUser } from "../../../hooks";
 import { Button, SmallLoader } from "../../atoms";
+import { BiLink } from "../../../icons";
+
 const UserProfileInfo = ({ user, posts }) => {
-  const { _id, firstName, username, avatar, bio, followers, following } = user;
+  const {
+    _id,
+    firstName,
+    username,
+    avatar,
+    bio,
+    followers,
+    following,
+    portfolio,
+  } = user;
   const {
     state: { user: loggedInUser, token },
   } = useAuth();
@@ -53,7 +64,16 @@ const UserProfileInfo = ({ user, posts }) => {
                 />
               )}
             </section>
-
+            {portfolio ? (
+              <section className="flex gap-1 items-center">
+                <BiLink />
+                <a target="_blank" className="underline" href={portfolio}>
+                  My Portfolio
+                </a>
+              </section>
+            ) : (
+              <h3>Please edit profile to add a portfolio link</h3>
+            )}
             <p className="text-center mt-2 text-sm text-modeColorText700  leading-5">
               {bio}
             </p>

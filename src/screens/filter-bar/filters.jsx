@@ -15,7 +15,7 @@ const Filters = () => {
   const trendSetter = () => dispatchPosts(trendHandler());
   const clearFilters = () => dispatchPosts(clearFiltersHandler());
   return (
-    <div className="flex flex-row md:flex-row md:justify-around p-2 lg:flex-col gap-8  m-2">
+    <div className="flex bg-modeColorText100 flex-row md:flex-row md:justify-around p-2 lg:flex-col gap-8  m-2">
       <Button
         btnFunc={clearFilters}
         btnText="Clear Filters"

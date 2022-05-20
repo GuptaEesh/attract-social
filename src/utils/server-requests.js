@@ -70,3 +70,13 @@ export const removeBookMarkPostHandler = async (id, token) => {
 export const getBookMarksHandler = async (token) => {
   return await axios.get(apiRoutes.bookmarkedPosts, getConfig(token));
 };
+export const deletePostHandler = async (id, token) => {
+  return await axios.delete(`/api/posts/${id}`, getConfig(token));
+};
+export const editPostHandler = async (id, contentObj, token) => {
+  return await axios.post(
+    `/api/posts/edit/${id}`,
+    { postData: contentObj },
+    getConfig(token)
+  );
+};
