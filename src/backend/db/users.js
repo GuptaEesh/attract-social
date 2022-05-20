@@ -34,7 +34,15 @@ export const users = [
           "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
       },
     ],
-    followers: [],
+    followers: [
+      {
+        firstName: "test",
+        lastName: "user",
+        username: "test420",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+    ],
     bookmarks: [],
     portfolio: "https://github.com/GuptaEesh",
   },
@@ -81,6 +89,13 @@ export const users = [
         firstName: "Eesh",
         lastName: "Gupta",
         username: "eesh730",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+      {
+        firstName: "test",
+        lastName: "user",
+        username: "test420",
         avatar:
           "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
       },
@@ -134,7 +149,22 @@ export const users = [
     updatedAt: formatDate(),
     avatar:
       "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
-    following: [],
+    following: [
+      {
+        firstName: "Eesh",
+        lastName: "Gupta",
+        username: "eesh730",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+      {
+        firstName: "Ronak",
+        lastName: "Mutha",
+        username: "ronak420",
+        avatar:
+          "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+      },
+    ],
     followers: [],
     bookmarks: [],
     portfolio: "https://www.google.com",

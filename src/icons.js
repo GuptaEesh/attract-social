@@ -17,4 +17,4 @@ export {
 } from "react-icons/bs";
 export { FaPaperPlane } from "react-icons/fa";
 export { BiTrendingUp, BiLink, BiCommentAdd } from "react-icons/bi";
-export { MdDownloadDone } from "react-icons/md";
+export { MdDownloadDone, MdCancel } from "react-icons/md";

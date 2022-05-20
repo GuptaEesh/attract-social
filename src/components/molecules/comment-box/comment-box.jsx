@@ -24,7 +24,7 @@ const CommentBox = ({ post, commentFound }) => {
     );
   };
   return (
-    <div className="rounded mt-1 flex flex-col w-full shadow-lg py-4 px-5 ">
+    <div className="rounded mt-1 bg-white flex flex-col w-full shadow-[0_0_8px_0_var(--white)] py-4 px-5 ">
       <div className="flex items-start justify-between">
         <div className="flex items-center w-full gap-1">
           <Link

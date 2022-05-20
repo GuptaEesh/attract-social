@@ -11,7 +11,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../../features";
 import { useAuth } from "../../../hooks";
 import { appRoutes } from "../../../utils";
-const SideBar = ({ showSideBar, toggleSideBar }) => {
+const SideBar = ({ showSideBar, toggleSideBar, togglePostModal }) => {
   const navigate = useNavigate();
   const {
     state: {
@@ -25,6 +25,7 @@ const SideBar = ({ showSideBar, toggleSideBar }) => {
     toggleSideBar();
   };
   const createPostHandler = () => {
+    togglePostModal();
     toggleSideBar();
   };
   const navOptions = [
