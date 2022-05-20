@@ -20,7 +20,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "eesh730",
-    createdAt: formatDate(),
+    createdAt: new Date("Mar 11 2022 10:20:18"),
     updatedAt: formatDate(),
   },
   {
@@ -31,7 +31,7 @@ export const posts = [
     avatar:
       "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
     likes: {
-      likeCount: 0,
+      likeCount: 1,
       likedBy: [
         {
           _id: uuid(),
@@ -45,7 +45,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "eesh730",
-    createdAt: formatDate(),
+    createdAt: new Date("May 12 2022 11:30:21"),
     updatedAt: formatDate(),
   },
 ];

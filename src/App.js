@@ -3,7 +3,14 @@ import "./App.css";
 import { TopBar } from "./components";
 import { useAuth } from "./hooks";
 import { RedirectAuth, RequireAuth } from "./route";
-import { Authenticate, LandingPage, UserProfile, Home } from "./screens";
+import {
+  Authenticate,
+  LandingPage,
+  UserProfile,
+  Home,
+  BookMarks,
+  Discover,
+} from "./screens";
 import { appRoutes } from "./utils";
 
 function App() {
@@ -20,6 +27,8 @@ function App() {
         </Route>
         <Route element={<RequireAuth />}>
           <Route path={appRoutes.home} element={<Home />} />
+          <Route path={appRoutes.bookmarks} element={<BookMarks />} />
+          <Route path={appRoutes.discover} element={<Discover />} />
           <Route path="/user/:username" element={<UserProfile />} />
         </Route>
       </Routes>
