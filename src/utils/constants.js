@@ -3,6 +3,8 @@ export const apiRoutes = {
   signup: "/api/auth/signup",
   allPosts: "/api/posts",
   bookmarkedPosts: "/api/users/bookmark",
+  allUsers: "/api/users",
+  userUpdate: "/api/users/edit",
 };
 export const appRoutes = {
   welcome: "/",
