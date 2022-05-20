@@ -122,4 +122,21 @@ export const users = [
     bookmarks: [],
     portfolio: "https://www.google.com",
   },
+  {
+    _id: uuid(),
+    firstName: "test",
+    lastName: "user",
+    username: "test420",
+    email: "test@test.com",
+    password: "2131!Qaeri",
+    bio: "I am a testing bot at attract technologies",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    avatar:
+      "https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg",
+    following: [],
+    followers: [],
+    bookmarks: [],
+    portfolio: "https://www.google.com",
+  },
 ];
