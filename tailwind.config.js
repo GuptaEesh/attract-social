@@ -8,6 +8,7 @@ module.exports = {
       modeColorText500: "var(--color-text-500)",
       modeColorText300: "var(--color-text-300)",
       modeColorText100: "var(--color-text-100)",
+      error: "var(--color-error)",
       btnBgColor: "var(--color-btn)",
       green400: "var(--green-400)",
       indigo900: "var(--indigo-900)",
