@@ -1,3 +1,4 @@
+export { PostModal } from "./modal";
 export { CreatePost } from "./create-post/create-post";
 export { SinglePostCard } from "./single-post-card/single-post-card";
 export { UserProfileInfo } from "./user-profile-info/user-profile-info";

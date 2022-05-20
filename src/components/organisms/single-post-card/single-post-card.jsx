@@ -22,7 +22,17 @@ import {
 import { SmallLoader } from "../../atoms";
 import { Link } from "react-router-dom";
 const SinglePostCard = ({ post }) => {
-  const { _id, firstName, username, avatar, content, createdAt } = post;
+  const {
+    _id,
+    firstName,
+    username,
+    avatar,
+    content,
+    createdAt,
+    likes,
+    comments,
+  } = post;
+  console.log(post);
   const [loaders, setLoaders] = useState({
     likeLoader: false,
     bookmarkLoader: false,
@@ -128,18 +138,40 @@ const SinglePostCard = ({ post }) => {
         <p>{content}</p>
       )}
       <div className="flex items-center justify-between mt-2 p-1">
-        {likeLoader ? (
-          <SmallLoader />
-        ) : post.likes.likedBy.find(
-            (userCheck) => userCheck.username === loggedInUser.username
-          ) ? (
-          <AiFillLike className="w-[1.5rem] h-[1.5rem]" onClick={disLikePost} />
-        ) : (
-          <AiOutlineLike className="w-[1.5rem] h-[1.5rem]" onClick={likePost} />
-        )}
-        <Link to={`/comment/${_id}`}>
-          <BiCommentAdd className="w-[1.5rem] h-[1.5rem]" />
-        </Link>
+        <section className="flex gap-1 items-center">
+          {likeLoader ? (
+            <SmallLoader />
+          ) : post.likes.likedBy.find(
+              (userCheck) => userCheck.username === loggedInUser.username
+            ) ? (
+            <AiFillLike
+              className="w-[1.5rem] h-[1.5rem]"
+              onClick={disLikePost}
+            />
+          ) : (
+            <AiOutlineLike
+              className="w-[1.5rem] h-[1.5rem]"
+              onClick={likePost}
+            />
+          )}
+          <span className="font-bold">{likes.likeCount}</span>
+        </section>
+        <section
+          className={`flex ${
+            comments.length ? "flex-row" : "flex-col"
+          } gap-1 items-center`}
+        >
+          <Link to={`/comment/${_id}`}>
+            <BiCommentAdd className="w-[1.5rem] h-[1.5rem] " />
+          </Link>
+          {!comments.length ? (
+            <span className="font-medium text-indigo900">
+              Be the first one to comment
+            </span>
+          ) : (
+            <span className="font-bold">{comments.length}</span>
+          )}
+        </section>
         {bookmarkLoader ? (
           <SmallLoader />
         ) : bookmarkedPosts.find((postCheck) => postCheck._id === _id) ? (
