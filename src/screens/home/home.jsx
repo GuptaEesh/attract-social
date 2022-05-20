@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { SinglePostCard, CreatePost } from "../../components";
 import { getPosts } from "../../features";
-import { useAuth, usePosts } from "../../hooks";
+import { useAuth, usePosts, useDisplayUser } from "../../hooks";
 import {
   filterPostsOnDate,
   getFiltered,
@@ -13,13 +13,26 @@ const Home = () => {
     state: { allPosts, sortByDate, trending },
     dispatchPosts,
   } = usePosts();
+  const {
+    state: { user: loggedInUser },
+  } = useAuth();
+  const {
+    state: { allUsers },
+  } = useDisplayUser();
   useEffect(() => {
     dispatchPosts(getPosts());
   }, []);
+  const userFeed = allPosts.filter(
+    (post) =>
+      loggedInUser.username === post.username ||
+      allUsers
+        ?.find((user) => user.username === loggedInUser.username)
+        ?.following.some((follower) => follower.username === post.username)
+  );
   const filters = { sortByDate, trending };
   let filteredPosts = getFiltered(filterPostsOnDate, trendingPosts)(
     filters,
-    allPosts
+    userFeed
   );
   return (
     filteredPosts && (
