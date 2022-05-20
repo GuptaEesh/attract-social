@@ -43,7 +43,10 @@ function App() {
               <Route path={appRoutes.home} element={<Home />} />
               <Route path={appRoutes.bookmarks} element={<BookMarks />} />
               <Route path={appRoutes.discover} element={<Discover />} />
-              <Route path="/user/:username" element={<UserProfile />} />
+              <Route
+                path="/user/:username"
+                element={<UserProfile togglePostModal={togglePostModal} />}
+              />
               <Route path="/comment/:postId" element={<CommentOnPost />} />
             </Route>
           </Routes>
