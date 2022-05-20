@@ -27,7 +27,7 @@ const CommentOnPost = () => {
     setComment("");
   };
   return (
-    <div className="flex flex-col items-center pb-8 mt-2 md:mt-2 lg:mt-24 w-[100vw] order-2 md:order-2 md:w-[100vw] lg:order-1 lg:w-[70vw] lg:ml-8 lg:mr-auto">
+    <div className="flex flex-col items-center p`b-8 mt-2 md:mt-2 lg:mt-24 w-[100vw] order-2 md:order-2 md:w-[100vw] lg:order-1 lg:w-[70vw] lg:ml-8 lg:mr-auto">
       {openedPost && <SinglePostCard post={openedPost} />}
       <section className="flex gap-1 p-4 mx-1 w-full">
         <Input
@@ -44,13 +44,21 @@ const CommentOnPost = () => {
           btnFunc={postComment}
         />
       </section>
-      {openedPost?.comments?.map((comment) => (
-        <CommentBox
-          key={comment._id}
-          post={openedPost}
-          commentFound={comment}
-        />
-      ))}
+      <section className="bg-modeColorText300 flex flex-col gap-2 rounded-md w-full h-full p-2 overflow-y-auto">
+        {!openedPost?.comments?.length ? (
+          <span className="text-indigo900 font-bold text-center text-2xl translate-y-20">
+            No comments as of now. Be the first one to do so.
+          </span>
+        ) : (
+          openedPost?.comments?.map((comment) => (
+            <CommentBox
+              key={comment._id}
+              post={openedPost}
+              commentFound={comment}
+            />
+          ))
+        )}
+      </section>
     </div>
   );
 };
