@@ -3,6 +3,7 @@ export const apiRoutes = {
   signup: "/api/auth/signup",
 };
 export const appRoutes = {
-  home: "/",
+  welcome: "/",
   auth: "/authenticate",
+  home: "/home",
 };

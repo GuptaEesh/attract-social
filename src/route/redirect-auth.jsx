@@ -6,7 +6,7 @@ const RedirectAuth = () => {
     const {state:{token}}=useAuth();
     const location = useLocation();
     return (
-        token?<Navigate to={appRoutes.home} state={{ from: location }} replace={true}/>:<Outlet/>
+        token?<Navigate to={appRoutes.welcome} state={{ from: location }} replace={true}/>:<Outlet/>
       )
 }
 

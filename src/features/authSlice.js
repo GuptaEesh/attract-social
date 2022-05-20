@@ -15,7 +15,6 @@ export const login = createAsyncThunk(
       const response = await loginHandler(username, password);
       return response.data;
     } catch (e) {
-      console.log(e);
       return rejectWithValue(e.response.data);
     }
   }
