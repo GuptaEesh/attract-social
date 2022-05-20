@@ -6,21 +6,7 @@
     height: 1.5rem;
     animation: spinner 2.5s ease-in-out infinite;
 }
-.loader-skeleton{
-    height:10rem;
-    background: linear-gradient(to right,rgba(255,255,255,0.6),rgba(255,255,255,0.7) 50%,rgba(255,255,255,0.6)),
-    var(--color-text-500);
-    background-repeat: repeat-y;
-    background-size: 20px 10rem;
-    background-position: 0 0;
-    animation: flash 1s infinite;	 
-}
 
-@keyframes flash {
-    to {
-        background-position: 100% 0, 0 0;
-      }
-}
 @keyframes spinner {
     25% {
         border-top: 4px solid var(--indigo-900);

@@ -16,6 +16,8 @@ export {
   updateAuthUser,
   deletePostHandler,
   editPostHandler,
+  postCommentHandler,
+  deleteCommentHandler,
 } from "./server-requests";
 
 export { apiRoutes, appRoutes } from "./constants";

@@ -16,7 +16,7 @@ const SuggestedPeople = () => {
   useEffect(() => {
     dispatchUser(getAllUsers());
   }, []);
-  const currUser = allUsers.find((user) => user.username === username);
+  const currUser = allUsers?.find((user) => user.username === username);
   return (
     allUsers.length && (
       <div className="flex flex-col gap-2">

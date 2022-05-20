@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineLike,
   AiFillLike,
@@ -7,6 +7,7 @@ import {
   AiFillDelete,
   AiFillEdit,
   MdDownloadDone,
+  BiCommentAdd,
 } from "../../../icons";
 import Moment from "react-moment";
 import { useAuth, usePosts } from "../../../hooks";
@@ -93,6 +94,7 @@ const SinglePostCard = ({ post }) => {
                       />
                     )}
                   </div>
+
                   <div>
                     {editLoader ? (
                       <SmallLoader />
@@ -135,6 +137,9 @@ const SinglePostCard = ({ post }) => {
         ) : (
           <AiOutlineLike className="w-[1.5rem] h-[1.5rem]" onClick={likePost} />
         )}
+        <Link to={`/comment/${_id}`}>
+          <BiCommentAdd className="w-[1.5rem] h-[1.5rem]" />
+        </Link>
         {bookmarkLoader ? (
           <SmallLoader />
         ) : bookmarkedPosts.find((postCheck) => postCheck._id === _id) ? (

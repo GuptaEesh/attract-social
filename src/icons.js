@@ -16,5 +16,5 @@ export {
   BsFillBookmarkCheckFill,
 } from "react-icons/bs";
 export { FaPaperPlane } from "react-icons/fa";
-export { BiTrendingUp, BiLink } from "react-icons/bi";
+export { BiTrendingUp, BiLink, BiCommentAdd } from "react-icons/bi";
 export { MdDownloadDone } from "react-icons/md";

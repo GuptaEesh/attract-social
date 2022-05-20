@@ -12,6 +12,8 @@ export {
   clearFiltersHandler,
   deletePostFromFeed,
   editThePost,
+  addCommentOnPost,
+  deleteSpecificComment,
 } from "./postsSlice";
 
 export {

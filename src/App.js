@@ -11,6 +11,7 @@ import {
   BookMarks,
   Discover,
   FilterBar,
+  CommentOnPost,
 } from "./screens";
 import { appRoutes } from "./utils";
 
@@ -35,6 +36,7 @@ function App() {
             <Route path={appRoutes.bookmarks} element={<BookMarks />} />
             <Route path={appRoutes.discover} element={<Discover />} />
             <Route path="/user/:username" element={<UserProfile />} />
+            <Route path="/comment/:postId" element={<CommentOnPost />} />
           </Route>
         </Routes>
         {!routeCheck && !routeCheckAuth && <FilterBar />}
