@@ -32,7 +32,6 @@ const SinglePostCard = ({ post }) => {
     likes,
     comments,
   } = post;
-  console.log(post);
   const [loaders, setLoaders] = useState({
     likeLoader: false,
     bookmarkLoader: false,
