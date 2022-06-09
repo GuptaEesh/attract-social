@@ -45,7 +45,7 @@ const CommentOnPost = () => {
           btnFunc={postComment}
         />
       </section>
-      <section className="bg-modeColorText300 flex flex-col gap-2 rounded-md w-full h-full p-2 overflow-y-auto">
+      <section className="bg-modeColorText100 flex flex-col gap-2 rounded-md w-full h-full p-2 overflow-y-auto">
         {!openedPost?.comments?.length ? (
           <span className="text-indigo900 font-bold text-center text-2xl translate-y-20">
             No comments as of now. Be the first one to do so.

@@ -100,7 +100,7 @@ const SinglePostCard = ({ post }) => {
                     ) : (
                       <AiFillDelete
                         onClick={deletePost}
-                        className="w-[1.5rem] h-[1.5rem] cursor-pointer active:ring-offset-1 rounded-full active:ring-2 active:ring-modeColorText700"
+                        className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
                       />
                     )}
                   </div>
@@ -111,12 +111,12 @@ const SinglePostCard = ({ post }) => {
                     ) : isEditable ? (
                       <MdDownloadDone
                         onClick={editPost}
-                        className="w-[1.5rem] h-[1.5rem] cursor-pointer active:ring-offset-1 rounded-full active:ring-2 active:ring-modeColorText700"
+                        className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
                       />
                     ) : (
                       <AiFillEdit
                         onClick={toggleEdit}
-                        className="w-[1.5rem] h-[1.5rem] cursor-pointer active:ring-offset-1 rounded-full active:ring-2 active:ring-modeColorText700"
+                        className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
                       />
                     )}
                   </div>
@@ -131,9 +131,10 @@ const SinglePostCard = ({ post }) => {
       </div>
       {isEditable ? (
         <textarea
+          className="resize-none	"
           onChange={(e) => setContentObj({ content: e.target.value })}
           value={contentObj.content}
-        ></textarea>
+        />
       ) : (
         <p>{content}</p>
       )}
@@ -145,12 +146,12 @@ const SinglePostCard = ({ post }) => {
               (userCheck) => userCheck.username === loggedInUser.username
             ) ? (
             <AiFillLike
-              className="w-[1.5rem] h-[1.5rem]"
+              className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
               onClick={disLikePost}
             />
           ) : (
             <AiOutlineLike
-              className="w-[1.5rem] h-[1.5rem]"
+              className="w-[2.5rem] h-[2.5rem]  cursor-pointer hover:border-2 hover:rounded-full p-2"
               onClick={likePost}
             />
           )}
@@ -162,7 +163,7 @@ const SinglePostCard = ({ post }) => {
           } gap-1 items-center`}
         >
           <Link to={`/comment/${_id}`}>
-            <BiCommentAdd className="w-[1.5rem] h-[1.5rem] " />
+            <BiCommentAdd className="w-[2.5rem] h-[2.5rem] p-2" />
           </Link>
           {!comments.length ? (
             <span className="font-medium text-indigo900">
@@ -176,11 +177,14 @@ const SinglePostCard = ({ post }) => {
           <SmallLoader />
         ) : bookmarkedPosts.find((postCheck) => postCheck._id === _id) ? (
           <BsFillBookmarkCheckFill
-            className="w-[1.5rem] h-[1.5rem]"
+            className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
             onClick={removeBookmark}
           />
         ) : (
-          <BsBookmark className="w-[1.5rem] h-[1.5rem]" onClick={addBookmark} />
+          <BsBookmark
+            className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
+            onClick={addBookmark}
+          />
         )}
       </div>
     </div>
