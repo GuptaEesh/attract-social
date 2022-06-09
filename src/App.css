@@ -1,6 +1,5 @@
 .App{
   background-color: var(--color-bg);
-  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 8px;
