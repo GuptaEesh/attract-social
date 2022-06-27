@@ -3,7 +3,7 @@ import { Toggler } from "../../molecules";
 import { SideBar } from "../side-bar/side-bar";
 
 const TopBar = ({ togglePostModal }) => {
-  const [showSideBar, setShowSideBar] = useState(true);
+  const [showSideBar, setShowSideBar] = useState(false);
   const toggleSideBar = () => setShowSideBar(!showSideBar);
   return (
     <div className="absolute w-full">

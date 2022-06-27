@@ -6,7 +6,7 @@ const Editor = ({ text, setContent }) => {
   };
   return (
     <textarea
-      className="h-[20vh] mb-2 border-0 p-2"
+      className="h-[20vh] mb-2 border-0 p-2 resize-none	"
       value={text}
       placeholder="description..."
       onChange={editHandler}

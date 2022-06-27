@@ -45,22 +45,22 @@ const UserProfileInfo = ({ user, posts }) => {
                   btnType="rounded py-0.5 border-2 border-modeColorText700 text-modeColorText900 px-1 text-sm"
                 />
               ) : followLoader ? (
-                <div className="w-20 pl-6">
-                  <SmallLoader />
-                </div>
-              ) : followers.find(
+                // <div className="w-20 pl-6">
+                <SmallLoader />
+              ) : // </div>
+              followers.find(
                   (checkUser) => checkUser.username === loggedInUser.username
                 ) ? (
                 <Button
                   btnText="Unfollow"
                   btnFunc={unfollow}
-                  btnType="rounded cursor-pointer w-20 px-1 text-sm py-0.5 bg-indigo700 text-white hover:bg-indigo600"
+                  btnType="rounded cursor-pointer h-[2.5rem] p-2 text-sm bg-indigo700 text-white hover:bg-indigo600"
                 />
               ) : (
                 <Button
                   btnText="Follow"
                   btnFunc={follow}
-                  btnType="rounded cursor-pointer w-20 px-1 text-sm py-0.5 bg-indigo700 text-white hover:bg-indigo600"
+                  btnType="rounded cursor-pointer h-[2.5rem] p-2 text-sm bg-indigo700 text-white hover:bg-indigo600"
                 />
               )}
             </section>

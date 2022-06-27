@@ -29,6 +29,7 @@ const Filters = () => {
               <Input
                 checkStatus={sortByDate === "OLDEST"}
                 inputName="date-sort"
+                inputClass="w-4 h-4 text-indigo900 bg-indigo900 border-indigo900"
                 inputType="radio"
                 inputFunc={() => dispatchPosts(sortByDateHandler("OLDEST"))}
               />
@@ -39,6 +40,7 @@ const Filters = () => {
                 checkStatus={sortByDate === "LATEST"}
                 inputName="date-sort"
                 inputType="radio"
+                inputClass="w-4 h-4 text-indigo900 bg-indigo900 border-indigo900"
                 inputFunc={() => dispatchPosts(sortByDateHandler("LATEST"))}
               />
               <span className="font-bold">Latest</span>

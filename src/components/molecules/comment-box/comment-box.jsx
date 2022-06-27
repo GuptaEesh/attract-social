@@ -24,7 +24,7 @@ const CommentBox = ({ post, commentFound }) => {
     );
   };
   return (
-    <div className="rounded mt-1 bg-white flex flex-col w-full shadow-[0_0_8px_0_var(--white)] py-4 px-5 ">
+    <div className="rounded mt-1 bg-white flex flex-col w-full py-4 px-5 ">
       <div className="flex items-start justify-between">
         <div className="flex items-center w-full gap-1">
           <Link
@@ -52,7 +52,7 @@ const CommentBox = ({ post, commentFound }) => {
                     ) : (
                       <AiFillDelete
                         onClick={deleteComment}
-                        className="w-[1.5rem] h-[1.5rem] cursor-pointer active:ring-offset-1 rounded-full active:ring-2 active:ring-modeColorText700"
+                        className="w-[2.5rem] h-[2.5rem] cursor-pointer hover:border-2 hover:rounded-full p-2"
                       />
                     )}
                   </div>

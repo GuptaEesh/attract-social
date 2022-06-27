@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AiFillHome,
   FaPaperPlane,
@@ -13,6 +13,19 @@ import { useAuth } from "../../../hooks";
 import { appRoutes } from "../../../utils";
 const SideBar = ({ showSideBar, toggleSideBar, togglePostModal }) => {
   const navigate = useNavigate();
+  const outsideRef = useRef();
+  const navRef = useRef();
+  useEffect(() => {
+    const closeSideNavHandler = (e) => {
+      if (!navRef.current?.contains(e.target)) toggleSideBar();
+    };
+    outsideRef.current?.addEventListener("mousedown", closeSideNavHandler);
+  }, [toggleSideBar]);
+  useEffect(() => {
+    showSideBar
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [showSideBar]);
   const {
     state: {
       user: { username, firstName, avatar, email },
@@ -41,11 +54,15 @@ const SideBar = ({ showSideBar, toggleSideBar, togglePostModal }) => {
   return (
     // this throws full width page out on click of hamburger
     <div
+      ref={outsideRef}
       className={`${
-        showSideBar ? "-translate-x-full" : "translate-x-0"
+        !showSideBar ? "-translate-x-full" : "translate-x-0"
       } absolute side-bar backdrop-blur-sm transform ease-in-out transition duration-100 flex justify-start z-10 items-start w-full flex-col h-screen`}
     >
-      <nav className="flex flex-col shadow-[0_0_8px_0_var(--color-text-700)] gap-8 h-full bg-white w-[20rem]">
+      <nav
+        ref={navRef}
+        className="flex flex-col shadow-[0_0_8px_0_var(--color-text-700)] gap-8 h-full bg-white w-[20rem]"
+      >
         {navOptions.map((item) => (
           <NavLink
             onClick={toggleSideBar}
